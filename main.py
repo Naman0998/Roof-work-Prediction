@@ -106,13 +106,14 @@ if st.button("Predict"):
         probs = stacking_model.predict_proba(X_sel)[:, 1][0]
 
         # 🔥 Use threshold from training (Stacking ~0.232 from your output)
-        threshold = 0.232
+        threshold = 0.43
         pred = int(probs >= threshold)
 
         if pred == 1:
-            st.success(f"✅ Prediction: Roof Work Needed (Stacking Model, {probs:.2f} confidence)")
+            st.success(f"✅ Prediction: Roof Work Needed (Model, {probs:.2f} confidence)")
         else:
-            st.info(f"❌ Prediction: Roof Work Not Needed (Stacking Model, {probs:.2f} confidence)")
+            st.info(f"❌ Prediction: Roof Work Not Needed (Model, {probs:.2f} confidence)")
 
 st.write("Inputs:", inputs)
+
 
