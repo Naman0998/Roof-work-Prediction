@@ -56,7 +56,7 @@ def rule_based_prediction(inputs):
         return None, "No rule fired"
 
 # --- Streamlit UI ---
-st.title("🏠 Roof Work Prediction (Hybrid Rules + Catboost Model)")
+st.title("🏠 Roof Work Prediction")
 
 roof_age = st.selectbox("Roof Age", ["0-5 years", "6-10 years", "11-15 years", 
                                      "16-20 years", "Above 20 years", "Unknown"])
@@ -106,14 +106,15 @@ if st.button("Predict"):
         probs = stacking_model.predict_proba(X_sel)[:, 1][0]
 
         # 🔥 Use threshold from training (Stacking ~0.232 from your output)
-        threshold = 0.43
+        threshold = 0.45
         pred = int(probs >= threshold)
 
         if pred == 1:
-            st.success(f"✅ Prediction: Roof Work Needed (Model, {probs:.2f} confidence)")
+            st.success(f"✅ Prediction: Roof Work Needed")
         else:
-            st.info(f"❌ Prediction: Roof Work Not Needed (Model, {probs:.2f} confidence)")
+            st.info(f"❌ Prediction: Roof Work Not Needed")
 
 st.write("Inputs:", inputs)
+
 
 
