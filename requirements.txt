@@ -4,4 +4,4 @@ scikit-learn==1.5.1
 imbalanced-learn==0.12.3
 joblib==1.4.2
 streamlit==1.38.0
-Catboost
+catboost==1.2.8
