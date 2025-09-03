@@ -4,7 +4,7 @@ import pandas as pd
 from feature_engineering import FastFeatureEnricher, FeatureSelector
 
 # --- Load stacking model + metadata ---
-saved = joblib.load(r"C:\Users\naman\OneDrive\Desktop\roof work\catboost_roof_model.pkl")
+saved = joblib.load(r"catboost_roof_model.pkl")
 stacking_model = saved["catboost_model"]
 #stacking_model = saved["stacking_model"]
 selected_features = saved["selected_features"]
@@ -115,3 +115,4 @@ if st.button("Predict"):
             st.info(f"❌ Prediction: Roof Work Not Needed (Stacking Model, {probs:.2f} confidence)")
 
 st.write("Inputs:", inputs)
+
