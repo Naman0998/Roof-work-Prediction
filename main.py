@@ -114,7 +114,6 @@ if st.button("Predict"):
         else:
             st.info(f"❌ Prediction: Roof Work Not Needed")
 
-st.write("Inputs:", inputs)
 
 
 
